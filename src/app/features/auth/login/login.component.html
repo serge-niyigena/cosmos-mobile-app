@@ -1,4 +1,4 @@
-<div class="container login-container" fxLayout="row" fxLayoutAlign="center center">
+<!-- <div class="container login-container" fxLayout="row" fxLayoutAlign="center center">
     <form [formGroup]="loginForm" fxFlex="30%" fxFlex.sm="50%" fxFlex.xs="90%">
         <mat-card>
             <mat-card-title>COSMOS</mat-card-title>
@@ -33,12 +33,50 @@
 
             <mat-card-actions class="login-actions">
                 <button mat-raised-button id="login" color="primary" [disabled]="loginForm.invalid || loading"
-                    (click)="login()">Login</button>
+                    (click)="login()">Login</button> -->
                 <!-- <button mat-button id="resetPassword" (click)="resetPassword()" type="button">Reset Password</button> -->
-            </mat-card-actions>
+            <!-- </mat-card-actions>
 
         </mat-card>
 
         <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
     </form>
-</div>
+</div> -->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Log In</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <form  (ngSubmit)="login()" [formGroup]="loginForm">
+      <ion-item lines="full">
+        <ion-label position="floating">Contact</ion-label>
+        <ion-input type="text"  formControlName="contact" required></ion-input>
+      </ion-item>
+      <div *ngIf="(loginForm.controls['contact'].dirty || loginForm.controls['contact'].touched) && loginForm.controls['contact'].errors" class="errors">
+        <span *ngIf="loginForm.controls['contact'].errors?.['required']">Contact is required</span>
+        <span *ngIf="loginForm.controls['contact'].errors?.['email']">Contact is invalid</span>
+      </div>
+     
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"  formControlName="password" required></ion-input>
+      </ion-item>
+      <div *ngIf="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && loginForm.controls['password'].errors" class="errors">
+        <span *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</span>
+        <span *ngIf="loginForm.controls['password'].errors?.['password']">Password is invalid</span>
+      </div>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" expand="block" [disabled]="loginForm.invalid || loading">Sign In</ion-button>
+          <!-- <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a> -->
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>
+
+<mat-spinner class="spinner" [diameter]="50" *ngIf="loading"></mat-spinner>

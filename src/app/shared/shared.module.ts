@@ -10,6 +10,7 @@ import { ContentPlaceholderAnimationComponent } from './content-placeholder-anim
 import { LocalDatePipe } from './pipes/local-date.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
 import { LayoutComponent } from './layout/layout.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { LayoutComponent } from './layout/layout.component';
         FormsModule,
         ReactiveFormsModule,
         FlexLayoutModule,
+        IonicModule
     ],
     declarations: [
         ConfirmDialogComponent,

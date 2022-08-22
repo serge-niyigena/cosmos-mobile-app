@@ -31,14 +31,11 @@ export class LoginComponent implements OnInit {
     private createForm() {
         this.loginForm = new UntypedFormGroup({
             contact: new UntypedFormControl('', [Validators.required]),
-            password: new UntypedFormControl('', Validators.required)
+            password: new UntypedFormControl('', [Validators.required])
         });
     }
 
     login() {
-        // const email = this.loginForm.get('email')?.value;
-        // const password = this.loginForm.get('password')?.value;
-        // const rememberMe = this.loginForm.get('rememberMe')?.value;
 
         this.loading = true;
         const auth =new AuthDTO(this.loginForm.value);

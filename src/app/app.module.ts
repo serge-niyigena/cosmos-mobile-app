@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { ItemComponent } from './features/item/page/item.component';
 import { FloorItemComponent } from './features/floor-item/page/floor-item.component';
 import { DamagedItemComponent } from './features/damaged-items/page/damaged-item.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DamagedItemComponent } from './features/damaged-items/page/damaged-item
       serverLoggingUrl: `http://my-api/logs`,
       level: environment.logLevel,
       serverLogLevel: environment.serverLogLevel
-    })
+    }),
+    IonicModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

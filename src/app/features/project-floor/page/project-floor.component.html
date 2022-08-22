@@ -40,7 +40,7 @@
               <!-- Position Column -->
               <ng-container matColumnDef="project">
                 <th mat-header-cell *matHeaderCellDef> Project </th>
-                <td mat-cell *matCellDef="let element"> {{element.floorProject.name}} </td>
+                <td mat-cell *matCellDef="let element" data-label="Project"> {{element.floorProject.name}} </td>
               </ng-container>
           
 
@@ -48,36 +48,36 @@
                
   
                   <th mat-header-cell *matHeaderCellDef> Floor </th>
-                  <td mat-cell *matCellDef="let element">  {{element.floorValue}} </td>
+                  <td mat-cell *matCellDef="let element" data-label="Floor">  {{element.floorValue}} </td>
                 </ng-container>
             
             
               <ng-container matColumnDef="ref">
                 <th mat-header-cell *matHeaderCellDef> Reference </th>
-                <td mat-cell *matCellDef="let element"> {{element.floorRef}} </td>
+                <td mat-cell *matCellDef="let element" data-label="Reference"> {{element.floorRef}} </td>
               </ng-container>
         
              
               <ng-container matColumnDef="measurement">
                 <th mat-header-cell *matHeaderCellDef> Measurement </th>
-                <td mat-cell *matCellDef="let element"> {{element.floorMeasurement}} </td>
+                <td mat-cell *matCellDef="let element" data-label="Measurement"> {{element.floorMeasurement}} </td>
               </ng-container>
           
               <!-- Weight Column -->
               <ng-container matColumnDef="desc">
                 <th mat-header-cell *matHeaderCellDef> Description </th>
-                <td mat-cell *matCellDef="let element"> {{element.floorDescription}} </td>
+                <td mat-cell *matCellDef="let element" data-label="Description"> {{element.floorDescription}} </td>
               </ng-container>
 
                 <!-- Weight Column -->
                 <ng-container matColumnDef="status">
                   <th mat-header-cell *matHeaderCellDef> Status </th>
-                  <td mat-cell *matCellDef="let element"> {{element.floorStatus.name}} </td>
+                  <td mat-cell *matCellDef="let element" data-label="Status"> {{element.floorStatus.name}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="items">
                   <th mat-header-cell *matHeaderCellDef> Items </th>
-                  <td mat-cell *matCellDef="let element"> <a id="floorItemsLink"  [routerLink]="['/floor-item']" [state]="{ data:element}">
+                  <td mat-cell *matCellDef="let element" data-label="Items"> <a id="floorItemsLink"  [routerLink]="['/floor-item']" [state]="{ data:element}">
                     Floor items
                   </a></td>
                 </ng-container>
@@ -88,7 +88,7 @@
             <ng-container matColumnDef="action">
 
               <th mat-header-cell *matHeaderCellDef class="text-center" > Actions </th>
-              <td mat-cell *matCellDef="let element"> 
+              <td mat-cell *matCellDef="let element" data-label="Actions"> 
 
                 <button mat-icon-button matTooltip="Click to Edit" (click)="openDialog(element)" class="iconbutton" color="accent" >
                   <mat-icon>edit</mat-icon>

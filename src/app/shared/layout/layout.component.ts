@@ -16,10 +16,122 @@ import { GroupData } from 'src/app/features/group/dto/group-data';
 })
 export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
+
+    pages= [
+
+        {
+            title:"Dashboard",
+            url:"/dashboard",
+            icon:"analytics-outline",
+            open:false,
+            children:[]
+        },
+        {
+            title:"Project",
+            url:"/project",
+            icon:"business",
+            open:false,
+            children:[]
+        },
+        {
+            title:"Project-floors",
+            url:"/project-floor",
+            icon:"layers",
+            open:false,
+            children:[]
+        },
+        {
+            title:"items",
+            url:"/item",
+            icon:"pricetags-outline",
+            open:false,
+            children:[]
+        },
+        {
+            title:"Damaged items",
+            url:"/damaged-item",
+            icon:"bookmarks-outline",
+            
+            children:[]
+        },
+        {
+            title:"Setups",
+            icon:"cog",
+            open:false,
+            children:[
+                {
+                    title:"Organizations",
+                    url:"/organizations",
+                    icon:"briefcase-outline",
+                    open:false
+                },
+                {
+                    title:"Users",
+                    url:"/users",
+                    icon:"people-outline"
+                },
+                {
+                    title:"Groups",
+                    url:"/groups",
+                    icon:"people-circle-outline"
+                },
+                {
+                    title:"Item types",
+                    url:"/item-types",
+                    icon:"prism-outline"
+                },
+                {
+                    title:"Item categories",
+                    url:"/item-categories",
+                    icon:"construct-outline"
+                },
+                {
+                    title:"Project categories",
+                    url:"/project-categories",
+                    icon:"construct-outline"
+                },
+                {
+                    title:"Project statuses",
+                    url:"/project-status",
+                    icon:"stopwatch-outline"
+                },
+                {
+                    title:"Usage statuses",
+                    url:"/usage-status",
+                    icon:"home-outline"
+                },
+                {
+                    title:"Unit types",
+                    url:"/unit-type",
+                    icon:"contract-outline"
+                },
+                {
+                    title:"User types",
+                    url:"/user-type",
+                    icon:"people-outline"
+                },
+                {
+                    title:"Roles",
+                    url:"/roles",
+                    icon:"finger-print-outline"
+                }
+            ],
+        },
+            {
+                title:"About",
+                url:"",
+                icon:"",
+                children:[]
+            }
+        
+
+    ];
+
+
     private _mobileQueryListener: () => void;
     mobileQuery: MediaQueryList;
-    showSpinner: boolean = false;
-    userName: string = "";
+    showSpinner: boolean = true;
+    userName: string ;
     isAdmin: boolean = false;
     userModel:UserModelDTO;
     userGroup:GroupData;

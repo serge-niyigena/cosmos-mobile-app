@@ -50,22 +50,7 @@ export class AuthenticationService {
         localStorage.removeItem('currentUser');
                this.currentUserSubject.next(new CurrentUser());
                this.router.navigate(['/auth/login']);
-               this.notificationService.openSnackBar("Logged out"); 
     }
-  
-    // logout(){
-    //     // remove user from local storage to log user out
-    
-    //     return this.http.post(`${this.logoutUrl}`,new Signout(this.currentUserValue.content['token'])).subscribe(res=>{
-    
-    //       if(res['status']==200){
-    //       localStorage.removeItem('currentUser');
-    //       this.currentUserSubject.next(null);
-    //       this.router.navigate(['/']);
-    //       this.alertService.success(res['message']);
-    //       }
-         
-    //     });
        
     }
   
